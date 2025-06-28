@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, CardContent, Typography, Button, Grid, Chip } from "@mui/material";
+import { Box, Card, CardContent, Typography, Button, Chip } from "@mui/material";
 
 interface Package {
   title: string;
@@ -59,18 +59,31 @@ export default function Jumbo88Page() {
         JUMBO88
       </Typography>
 
-      <Grid container spacing={2} direction="column">
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: {
+            xs: 'repeat(2, 1fr)',
+            sm: 'repeat(2, 1fr)',
+            md: 'repeat(3, 1fr)',
+          },
+          gap: 2,
+        }}
+      >
         {packages.map((pkg, index) => (
-          <Grid key={index}>
-            <Card
-              sx={{
-                bgcolor: "#1e293b",
-                color: "white",
-                border: "2px solid #22c55e",
-                borderRadius: 2,
-              }}
-            >
-              <CardContent>
+          <Card
+            key={index}
+            sx={{
+              bgcolor: "#1e293b",
+              color: "white",
+              border: "2px solid #22c55e",
+              borderRadius: 2,
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+              <Box sx={{ flexGrow: 1 }}>
                 <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
                   <Typography variant="h6" sx={{ flexGrow: 1 }}>
                     {pkg.title}
@@ -93,19 +106,19 @@ export default function Jumbo88Page() {
                     {pkg.oldPrice}
                   </Typography>
                 )}
-                <Button
-                  variant="contained"
-                  color="success"
-                  fullWidth
-                  sx={{ mt: 1 }}
-                >
-                  {pkg.newPrice}
-                </Button>
-              </CardContent>
-            </Card>
-          </Grid>
+              </Box>
+              <Button
+                variant="contained"
+                color="success"
+                fullWidth
+                sx={{ mt: 2 }}
+              >
+                {pkg.newPrice}
+              </Button>
+            </CardContent>
+          </Card>
         ))}
-      </Grid>
+      </Box>
 
       <Box sx={{ mt: 4, textAlign: "center" }}>
         <Typography variant="body2" color="white">
