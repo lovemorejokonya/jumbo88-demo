@@ -11,11 +11,11 @@ import Box from '@mui/material/Box';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import HomeIcon from '@mui/icons-material/Home';
 
 // Navigation items
 const navItems = [
   { label: 'Home', path: '/' },
-  { label: 'Profile', path: '/profile' },
 ];
 
 // Basic Topnav Component
@@ -41,19 +41,18 @@ const TopNav: React.FC = () => {
   return (
       <AppBar position="static">
         <Toolbar sx={{ bgcolor: '#0a0f1b' }}>
-          {/* <Typography
-            variant="h6"
-            component={RouterLink} // Make title a link to home
-            to="/"
-            sx={{
-              flexGrow: 1,
-              textDecoration: 'none',
-              color: 'inherit',
-              mr: 2, // Add some margin if needed
-            }}
+          <RouterLink
+           to="/"
+           style={{
+            flexGrow: 1,
+            textDecoration: 'none',
+            color: 'inherit',
+            marginRight: '1rem',
+            display: 'flex',
+          }}
           >
-            Jumbo88
-          </Typography> */}
+            <HomeIcon/>
+          </RouterLink>
 
           {isMobile ? (
             <Box sx={{ flexGrow: 0, display: 'flex' }}> {/* Adjusted flexGrow for mobile icon positioning */}

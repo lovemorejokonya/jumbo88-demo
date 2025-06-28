@@ -7,8 +7,13 @@ import {
   Button,
 } from "@mui/material";
 import * as motion from "motion/react-client";
+import type { Package } from "./Jumbo88";
 
-export default function MotionCard({ pkg, index }) {
+interface MotionCardProps {
+  pkg: Package;
+}
+
+export default function MotionCard({ pkg }: MotionCardProps) {
   return (
     <motion.div
       whileHover={{ scale: 1.2 }}
@@ -16,7 +21,6 @@ export default function MotionCard({ pkg, index }) {
       style={box}
     >
       <Card
-        key={index}
         sx={{
           bgcolor: "#1e293b",
           color: "white",

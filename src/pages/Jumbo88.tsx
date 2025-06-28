@@ -1,8 +1,8 @@
 import React from "react";
-import { Box, Card, CardContent, Typography, Button, Chip } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import MotionCard from "./MotionCard";
 
-interface Package {
+export interface Package {
   title: string;
   discount?: string;
   gc: string;
@@ -71,8 +71,10 @@ export default function Jumbo88Page() {
           gap: 2,
         }}
       >
-        {packages.map((pkg, index) => (
-          <MotionCard pkg={pkg} index={index} />
+        {packages.map((pkg: Package, index: number) => (
+          <React.Fragment key={index}>
+            <MotionCard pkg={pkg}/>
+          </React.Fragment>
         ))}
       </Box>
 
