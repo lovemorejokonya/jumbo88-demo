@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Card, CardContent, Typography, Button, Grid, Chip } from "@mui/material";
+import ApplePayButton from "../components/ApplePayButton";
 
 interface Package {
   title: string;
@@ -57,6 +58,7 @@ export default function Jumbo88Page() {
     <Box sx={{ padding: 2, bgcolor: "#0a0f1b", minHeight: "100vh" }}>
       <Typography variant="h4" align="center" sx={{ color: "lime", fontWeight: "bold", mb: 2 }}>
         JUMBO88
+      <ApplePayButton />
       </Typography>
 
       <Grid container spacing={2} direction="column">
