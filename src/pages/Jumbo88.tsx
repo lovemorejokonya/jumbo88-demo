@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import ApplePayButton from "../components/ApplePayButton";
 import MotionCard from "./MotionCard";
 
 export interface Package {
@@ -58,6 +59,7 @@ export default function Jumbo88Page() {
     <Box sx={{ padding: 2, bgcolor: "#0a0f1b", minHeight: "100vh" }}>
       <Typography variant="h4" align="center" sx={{ color: "lime", fontWeight: "bold", mb: 2 }}>
         JUMBO88
+      <ApplePayButton />
       </Typography>
 
       <Box
