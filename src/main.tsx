@@ -6,7 +6,6 @@ import Jumbo88 from './pages/Jumbo88.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {/* <App /> */}
-    <Jumbo88 />
+    <App />
   </StrictMode>,
 )
