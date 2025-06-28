@@ -1,8 +1,9 @@
 import React from "react";
-import { Box, Card, CardContent, Typography, Button, Grid, Chip } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import ApplePayButton from "../components/ApplePayButton";
+import MotionCard from "./MotionCard";
 
-interface Package {
+export interface Package {
   title: string;
   discount?: string;
   gc: string;
@@ -61,53 +62,23 @@ export default function Jumbo88Page() {
       <ApplePayButton />
       </Typography>
 
-      <Grid container spacing={2} direction="column">
-        {packages.map((pkg, index) => (
-          <Grid key={index}>
-            <Card
-              sx={{
-                bgcolor: "#1e293b",
-                color: "white",
-                border: "2px solid #22c55e",
-                borderRadius: 2,
-              }}
-            >
-              <CardContent>
-                <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-                  <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                    {pkg.title}
-                  </Typography>
-                  {pkg.discount && (
-                    <Chip label={pkg.discount} color="success" size="small" sx={{ ml: 1 }} />
-                  )}
-                </Box>
-                <Typography variant="body1">{pkg.gc}</Typography>
-                {pkg.sc && (
-                  <Typography variant="body2" color="secondary">
-                    {pkg.sc}
-                  </Typography>
-                )}
-                {pkg.oldPrice && (
-                  <Typography
-                    variant="body2"
-                    sx={{ textDecoration: "line-through", color: "#94a3b8" }}
-                  >
-                    {pkg.oldPrice}
-                  </Typography>
-                )}
-                <Button
-                  variant="contained"
-                  color="success"
-                  fullWidth
-                  sx={{ mt: 1 }}
-                >
-                  {pkg.newPrice}
-                </Button>
-              </CardContent>
-            </Card>
-          </Grid>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: {
+            xs: 'repeat(2, 1fr)',
+            sm: 'repeat(2, 1fr)',
+            md: 'repeat(3, 1fr)',
+          },
+          gap: 2,
+        }}
+      >
+        {packages.map((pkg: Package, index: number) => (
+          <React.Fragment key={index}>
+            <MotionCard pkg={pkg}/>
+          </React.Fragment>
         ))}
-      </Grid>
+      </Box>
 
       <Box sx={{ mt: 4, textAlign: "center" }}>
         <Typography variant="body2" color="white">
