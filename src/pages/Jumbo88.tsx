@@ -10,6 +10,7 @@ export interface Package {
   sc?: string;
   oldPrice?: string;
   newPrice: string;
+  priceId: string;
 }
 
 const packages: Package[] = [
@@ -20,6 +21,7 @@ const packages: Package[] = [
     sc: "20 FREE SC",
     oldPrice: "$19.99",
     newPrice: "$9.99",
+    priceId: "price_1Rf47GBG0PkbaNmOYTlP8b7O", // price_1Rf47GBG0PkbaNmOYTlP8b7O
   },
   {
     title: "Elite",
@@ -28,30 +30,35 @@ const packages: Package[] = [
     sc: "60 FREE SC",
     oldPrice: "$59.99",
     newPrice: "$39.99",
+    priceId: "price_1Rf47oBG0PkbaNmOEGk73IDr",
   },
-  {
-    title: "debug webhooks package",
-    gc: "111 GC",
-    sc: "0.02 FREE SC",
-    newPrice: "$0.01",
-  },
-  {
-    title: "Quick 5",
-    gc: "5,000 GC",
-    newPrice: "$4.99",
-  },
-  {
-    title: "Quick 10",
-    gc: "10,000 GC",
-    sc: "10 FREE SC",
-    newPrice: "$9.99",
-  },
-  {
-    title: "Quick 20",
-    gc: "20,000 GC",
-    sc: "20 FREE SC",
-    newPrice: "$19.99",
-  },
+  // {
+  //   title: "debug webhooks package",
+  //   gc: "111 GC",
+  //   sc: "0.02 FREE SC",
+  //   newPrice: "$0.01",
+  //   priceId: "price_1Rf47GBG0PkbaNmOYTlP8b7O",
+  // },
+  // {
+  //   title: "Quick 5",
+  //   gc: "5,000 GC",
+  //   newPrice: "$4.99",
+  //   priceId: "price_1Rf47GBG0PkbaNmOYTlP8b7O",
+  // },
+  // {
+  //   title: "Quick 10",
+  //   gc: "10,000 GC",
+  //   sc: "10 FREE SC",
+  //   newPrice: "$9.99",
+  //   priceId: "price_1Rf47GBG0PkbaNmOYTlP8b7O",
+  // },
+  // {
+  //   title: "Quick 20",
+  //   gc: "20,000 GC",
+  //   sc: "20 FREE SC",
+  //   newPrice: "$19.99",
+  //   priceId: "price_1Rf47GBG0PkbaNmOYTlP8b7O",
+  // },
 ];
 
 export default function Jumbo88Page() {
@@ -59,7 +66,7 @@ export default function Jumbo88Page() {
     <Box sx={{ padding: 2, bgcolor: "#0a0f1b", minHeight: "100vh" }}>
       <Typography variant="h4" align="center" sx={{ color: "lime", fontWeight: "bold", mb: 2 }}>
         JUMBO88
-      <ApplePayButton />
+      {/* <ApplePayButton label="Starter" amount={1000}/> */}
       </Typography>
 
       <Box

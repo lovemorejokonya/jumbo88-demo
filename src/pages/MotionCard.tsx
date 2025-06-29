@@ -8,12 +8,21 @@ import {
 } from "@mui/material";
 import * as motion from "motion/react-client";
 import type { Package } from "./Jumbo88";
+import { useNavigate } from "react-router-dom";
 
 interface MotionCardProps {
   pkg: Package;
 }
 
 export default function MotionCard({ pkg }: MotionCardProps) {
+
+  const navigate = useNavigate();
+
+  const handleNavigate = (priceId: string) => {
+    // console.log({priceId});
+    navigate(`/checkout/${priceId}`);
+  };
+
   return (
     <motion.div
       whileHover={{ scale: 1.2 }}
@@ -62,7 +71,7 @@ export default function MotionCard({ pkg }: MotionCardProps) {
               </Typography>
             )}
           </Box>
-          <Button variant="contained" color="success" fullWidth sx={{ mt: 2 }}>
+          <Button variant="contained" color="success" fullWidth sx={{ mt: 2 }} onClick={() => handleNavigate(pkg.priceId)}>
             {pkg.newPrice}
           </Button>
         </CardContent>

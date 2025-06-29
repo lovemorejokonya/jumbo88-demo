@@ -6,7 +6,12 @@ import {
 } from "@stripe/react-stripe-js";
 import type { PaymentRequest } from "@stripe/stripe-js";
 
-const ApplePayButton: React.FC = () => {
+interface ApplePayButtonProps {
+  label: string;
+  amount: number; // in cents
+}
+
+const ApplePayButton: React.FC<ApplePayButtonProps> = ({label, amount}: ApplePayButtonProps) => {
   const stripe = useStripe();
   const elements = useElements();
   const [paymentRequest, setPaymentRequest] = useState<PaymentRequest | null>(
@@ -19,8 +24,8 @@ const ApplePayButton: React.FC = () => {
         country: "US",
         currency: "usd",
         total: {
-          label: "Jumbo88 Demo Total",
-          amount: 999, // $9.99
+          label: label,
+          amount: amount,
         },
         requestPayerName: true,
         requestPayerEmail: true,
@@ -48,7 +53,7 @@ const ApplePayButton: React.FC = () => {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
-                amount: 999,
+                amount: amount,
                 currency: "usd",
               }),
             }
@@ -89,7 +94,7 @@ const ApplePayButton: React.FC = () => {
         paymentRequest.off("paymentmethod");
       }
     };
-  }, [paymentRequest, stripe, elements]);
+  }, [paymentRequest, stripe, elements, amount]);
 
   if (!paymentRequest) {
     return <div>Apple Pay is not available on this device/browser.</div>;
