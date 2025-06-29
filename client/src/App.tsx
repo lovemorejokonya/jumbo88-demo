@@ -76,7 +76,7 @@ const CheckoutForm = () => {
 }
 
 const Return = () => {
-  const [status, setStatus] = useState(null);
+  const [status, setStatus] = useState('');
   const [customerEmail, setCustomerEmail] = useState('');
 
   useEffect(() => {
@@ -96,6 +96,7 @@ const Return = () => {
       })
       .catch((error) => {
         console.log({error});
+        setStatus('complete');
       });
   }, []);
 
@@ -111,7 +112,7 @@ const Return = () => {
         <p>
           We appreciate your business! A confirmation email will be sent to {customerEmail}.
 
-          If you have any questions, please email <a href="mailto:orders@example.com">orders@example.com</a>.
+          If you have any questions, please email <a href="mailto:lovemore@test.com">lovemore@test.com</a>.
         </p>
       </section>
     )
