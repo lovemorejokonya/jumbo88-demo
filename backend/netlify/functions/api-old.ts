@@ -6,7 +6,7 @@ import Stripe from "stripe";
 import 'dotenv/config'
 // const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-const api = express();
+const app = express();
 
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 const stripe = new Stripe(STRIPE_SECRET_KEY!, {
@@ -72,6 +72,6 @@ router.post("/create-payment-intent", async (req: Request, res: Response) => {
   }
 });
 
-api.use("/api/", router);
+// app.use("/api/", router);
 
-export const handler = serverless(api);
+export const handler = serverless(app);
