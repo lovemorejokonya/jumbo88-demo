@@ -14,12 +14,18 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.1.2",
     "@mui/material": "^7.1.2",
+    "@netlify/functions": "^4.1.8",
+    "@netlify/vite-plugin": "^2.3.4",
     "@stripe/react-stripe-js": "^3.7.0",
     "@stripe/stripe-js": "^7.4.0",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
     "motion": "^12.19.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^7.6.3"
+    "react-router-dom": "^7.6.3",
+    "serverless-http": "^3.2.0",
+    "stripe": "^18.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
