@@ -11,6 +11,8 @@ interface ApplePayButtonProps {
   amount: number; // in cents
 }
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const ApplePayButton: React.FC<ApplePayButtonProps> = ({label, amount}: ApplePayButtonProps) => {
   const stripe = useStripe();
   const elements = useElements();
@@ -48,7 +50,7 @@ const ApplePayButton: React.FC<ApplePayButtonProps> = ({label, amount}: ApplePay
       paymentRequest.on("paymentmethod", async (event) => {
         try {
           const response = await fetch(
-            "http://localhost:4242/create-payment-intent",
+            `${API_URL}/create-payment-intent`,
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },

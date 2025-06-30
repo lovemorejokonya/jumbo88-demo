@@ -7,7 +7,8 @@ import Jumbo88 from "./pages/Jumbo88";
 import Layout from "./components/Layout";
 import { useCallback, useEffect, useState } from "react";
 
-const STRIPE_PUBLISHABLE_KEY = "pk_test_51RemvzBG0PkbaNmOFioES7URLdPkVRv5AdI0lqJIdH65JF9Xsz4R1ybPYpGj0BeStJLP3QUho9cqOMJo9TyDAW9M007tunX9EJ";
+const API_URL = import.meta.env.VITE_API_URL;
+const STRIPE_PUBLISHABLE_KEY = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
 const stripePromise: Promise<Stripe | null> = loadStripe(STRIPE_PUBLISHABLE_KEY);
 
 function App() {
@@ -50,7 +51,7 @@ const CheckoutForm = () => {
   console.log({priceId});
   const fetchClientSecret = useCallback(() => {
     // Create a Checkout Session
-    return fetch("http://localhost:4242/create-checkout-session", {
+    return fetch(`${API_URL}/create-checkout-session`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

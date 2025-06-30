@@ -1,11 +1,12 @@
 import express, { Request, Response } from "express";
 import Stripe from "stripe";
 import cors from "cors";
+import 'dotenv/config'
 
 const app = express();
-const port = 4242;
-const STRIPE_SECRET_KEY = "sk_test_51RemvzBG0PkbaNmOBwo17Ig1B15iVTDnasWlBTXqLiDO11ZpTAIhy2lzcrZIjyZef9UCfp0VAHpCMmRjD4W4g0FX009MKIhH9t";
-const stripe = new Stripe(STRIPE_SECRET_KEY, {
+const port = process.env.PORT || 4242;
+const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
+const stripe = new Stripe(STRIPE_SECRET_KEY!, {
   apiVersion: "2023-10-16",
 });
 
@@ -14,8 +15,8 @@ app.use(express.static('public'));
 app.use(cors());
 app.use(express.json());
 
-const YOUR_DOMAIN = 'http://localhost:5173';
-// const YOUR_DOMAIN = 'https://86ef-2607-fea8-a51c-d700-e078-5aca-a263-37cc.ngrok-free.app';
+const CLIENT_URL = process.env.CLIENT_URL!;
+// const CLIENT_URL = 'https://86ef-2607-fea8-a51c-d700-e078-5aca-a263-37cc.ngrok-free.app';
 
 app.get("/api/test", async (req: Request, res: Response) => {
   res.status(200).send({ message: "it works!" });
@@ -36,7 +37,7 @@ app.post('/create-checkout-session', async (req: Request, res: Response) => {
         },
       ],
       mode: 'payment',
-      return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}`,
+      return_url: `${CLIENT_URL}/return?session_id={CHECKOUT_SESSION_ID}`,
     });
   
     res.send({clientSecret: session.client_secret});
