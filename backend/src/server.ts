@@ -16,7 +16,6 @@ app.use(cors());
 app.use(express.json());
 
 const CLIENT_URL = process.env.CLIENT_URL!;
-// const CLIENT_URL = 'https://86ef-2607-fea8-a51c-d700-e078-5aca-a263-37cc.ngrok-free.app';
 
 app.get("/api/test", async (req: Request, res: Response) => {
   res.status(200).send({ message: "it works!" });
