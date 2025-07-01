@@ -28,7 +28,8 @@ export default function MotionCard({ pkg }: MotionCardProps) {
     <motion.div
       whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.8 }}
-      style={box}
+      style={{ cursor: 'pointer', ...box }}
+      onClick={() => handleNavigate(pkg.priceId)}
     >
       <Card
         sx={{
@@ -47,7 +48,7 @@ export default function MotionCard({ pkg }: MotionCardProps) {
         }}
       >
         {/* Featured Star */}
-        { pkg.title === "Elite" && (
+        { pkg.featured && (
         <Box sx={{ position: 'absolute', top: -18, left: -18, zIndex: 2, background: 'rgba(255,255,255,0.05)', borderRadius: '50%', p: 0.5, boxShadow: '0 2px 8px rgba(0,0,0,0.2)' }}>
           <StarIcon sx={{ color: '#FFD600', fontSize: 36, filter: 'drop-shadow(0 2px 4px #0008)' }} />
         </Box>

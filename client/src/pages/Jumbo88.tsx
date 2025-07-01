@@ -22,6 +22,7 @@ const packages: Package[] = [
     oldPrice: "$19.99",
     newPrice: "$9.99",
     priceId: "price_1Rf47GBG0PkbaNmOYTlP8b7O", // price_1Rf47GBG0PkbaNmOYTlP8b7O
+    featured: true,
   },
   {
     title: "Elite",
@@ -33,33 +34,38 @@ const packages: Package[] = [
     priceId: "price_1Rf47oBG0PkbaNmOEGk73IDr",
     featured: true,
   },
-  // {
-  //   title: "debug webhooks package",
-  //   gc: "111 GC",
-  //   sc: "0.02 FREE SC",
-  //   newPrice: "$0.01",
-  //   priceId: "price_1Rf47GBG0PkbaNmOYTlP8b7O",
-  // },
-  // {
-  //   title: "Quick 5",
-  //   gc: "5,000 GC",
-  //   newPrice: "$4.99",
-  //   priceId: "price_1Rf47GBG0PkbaNmOYTlP8b7O",
-  // },
-  // {
-  //   title: "Quick 10",
-  //   gc: "10,000 GC",
-  //   sc: "10 FREE SC",
-  //   newPrice: "$9.99",
-  //   priceId: "price_1Rf47GBG0PkbaNmOYTlP8b7O",
-  // },
-  // {
-  //   title: "Quick 20",
-  //   gc: "20,000 GC",
-  //   sc: "20 FREE SC",
-  //   newPrice: "$19.99",
-  //   priceId: "price_1Rf47GBG0PkbaNmOYTlP8b7O",
-  // },
+  {
+    title: "Quick 4",
+    gc: "111 GC",
+    sc: "0.02 FREE SC",
+    oldPrice: "-",
+    newPrice: "$9.99",
+    priceId: "price_1Rf47GBG0PkbaNmOYTlP8b7O",
+  },
+  {
+    title: "Quick 5",
+    gc: "5,000 GC",
+    sc: "0.02 FREE SC",
+    oldPrice: "-",
+    newPrice: "$9.99",
+    priceId: "price_1Rf47GBG0PkbaNmOYTlP8b7O",
+  },
+  {
+    title: "Quick 10",
+    gc: "10,000 GC",
+    sc: "10 FREE SC",
+    oldPrice: "-",
+    newPrice: "$9.99",
+    priceId: "price_1Rf47GBG0PkbaNmOYTlP8b7O",
+  },
+  {
+    title: "Quick 20",
+    gc: "20,000 GC",
+    sc: "20 FREE SC",
+    oldPrice: "-",
+    newPrice: "$9.99",
+    priceId: "price_1Rf47GBG0PkbaNmOYTlP8b7O",
+  },
 ];
 
 export default function Jumbo88Page() {
