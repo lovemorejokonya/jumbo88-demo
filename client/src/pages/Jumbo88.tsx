@@ -72,7 +72,7 @@ export default function Jumbo88Page() {
       width: '100vw',
     }}>
       <Box sx={{ maxWidth: 1400, mx: 'auto', px: 4, alignItems: 'center' }}>
-        <Typography variant="h4" align="center" sx={{ color: "lime", fontWeight: "bold", mb: 2 }}>
+        <Typography variant="h4" align="center" sx={{ color: "lime", fontWeight: "bold", mb: 4, mt: 4 }}>
           JUMBO88
         </Typography>
         <Box
