@@ -6,6 +6,7 @@ import {
   Chip,
   Button,
 } from "@mui/material";
+import StarIcon from '@mui/icons-material/Star';
 import * as motion from "motion/react-client";
 import type { Package } from "./Jumbo88";
 import { useNavigate } from "react-router-dom";
@@ -31,14 +32,26 @@ export default function MotionCard({ pkg }: MotionCardProps) {
     >
       <Card
         sx={{
-          bgcolor: "#1e293b",
-          color: "white",
-          border: "2px solid #22c55e",
-          borderRadius: 2,
-          display: "flex",
-          flexDirection: "column",
+          background: 'rgba(30, 41, 59, 0.35)',
+          color: 'white',
+          border: '1.5px solid rgba(255,255,255,0.25)',
+          borderRadius: 3,
+          display: 'flex',
+          flexDirection: 'column',
+          position: 'relative',
+          overflow: 'visible',
+          boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+          backdropFilter: 'blur(14px) saturate(180%)',
+          WebkitBackdropFilter: 'blur(14px) saturate(180%)',
+          transition: 'box-shadow 0.3s',
         }}
       >
+        {/* Featured Star */}
+        { pkg.title === "Elite" && (
+        <Box sx={{ position: 'absolute', top: -18, left: -18, zIndex: 2, background: 'rgba(255,255,255,0.05)', borderRadius: '50%', p: 0.5, boxShadow: '0 2px 8px rgba(0,0,0,0.2)' }}>
+          <StarIcon sx={{ color: '#FFD600', fontSize: 36, filter: 'drop-shadow(0 2px 4px #0008)' }} />
+        </Box>
+        )}
         <CardContent
           sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}
         >

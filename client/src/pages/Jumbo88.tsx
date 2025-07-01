@@ -10,6 +10,7 @@ export interface Package {
   oldPrice?: string;
   newPrice: string;
   priceId: string;
+  featured?: boolean;
 }
 
 const packages: Package[] = [
@@ -30,6 +31,7 @@ const packages: Package[] = [
     oldPrice: "$59.99",
     newPrice: "$39.99",
     priceId: "price_1Rf47oBG0PkbaNmOEGk73IDr",
+    featured: true,
   },
   // {
   //   title: "debug webhooks package",
