@@ -62,33 +62,42 @@ const packages: Package[] = [
 
 export default function Jumbo88Page() {
   return (
-    <Box sx={{ padding: 2, bgcolor: "#0a0f1b", minHeight: "100vh" }}>
-      <Typography variant="h4" align="center" sx={{ color: "lime", fontWeight: "bold", mb: 2 }}>
-        JUMBO88
-      </Typography>
-
-      <Box
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: {
-            xs: 'repeat(2, 1fr)',
-            sm: 'repeat(2, 1fr)',
-            md: 'repeat(3, 1fr)',
-          },
-          gap: 2,
-        }}
-      >
-        {packages.map((pkg: Package, index: number) => (
-          <React.Fragment key={index}>
-            <MotionCard pkg={pkg}/>
-          </React.Fragment>
-        ))}
-      </Box>
-
-      <Box sx={{ mt: 4, textAlign: "center" }}>
-        <Typography variant="body2" color="white">
-          VISA &nbsp; • &nbsp; MasterCard &nbsp; • &nbsp; Apple Pay &nbsp; • &nbsp; Google Pay
+    <Box sx={{
+      px: 0,
+      py: { xs: 2, sm: 4 },
+      bgcolor: "#0a0f1b",
+      minHeight: "100vh",
+      width: '100vw',
+    }}>
+      <Box sx={{ maxWidth: 1400, mx: 'auto', px: 4, alignItems: 'center' }}>
+        <Typography variant="h4" align="center" sx={{ color: "lime", fontWeight: "bold", mb: 2 }}>
+          JUMBO88
         </Typography>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: {
+              xs: 'repeat(2, 1fr)',
+              sm: 'repeat(2, 1fr)',
+              md: 'repeat(3, 1fr)',
+            },
+            gap: 2,
+          }}
+        >
+          {packages.map((pkg: Package, index: number) => (
+            <React.Fragment key={index}>
+              <MotionCard pkg={pkg}/>
+            </React.Fragment>
+          ))}
+        </Box>
+        <Box sx={{ mt: 4, textAlign: "center" }}>
+          <Typography variant="body2" color="white">
+            VISA &nbsp; • &nbsp; MasterCard &nbsp; • &nbsp; Apple Pay &nbsp; • &nbsp; Google Pay
+          </Typography>
+        </Box>
+      </Box>
+      <Box sx={{ mt: 8, textAlign: "center", color: '#a3e635', fontWeight: 'bold', fontSize: 18 }}>
+        Enjoy secure checkout and instant delivery!
       </Box>
     </Box>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 
 // Import page components
 import TopNav from './TopNav';
@@ -8,10 +8,20 @@ import TopNav from './TopNav';
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <>
-      <TopNav/>
-      <Container component="main" sx={{ ml: 0, mr: 0, minHeight: 'calc(100vh - 280px)' }}>
+      <TopNav />
+      <Box
+        component="main"
+        sx={{
+          width: '100vw',
+          minHeight: 'calc(100vh - 64px)',
+          bgcolor: 'transparent',
+          px: 0,
+          py: 0,
+          background: 'linear-gradient(90deg, #0a0f1b 0%, #1e293b 100%)',
+        }}
+      >
         {children}
-      </Container>
+      </Box>
     </>
   );
 };

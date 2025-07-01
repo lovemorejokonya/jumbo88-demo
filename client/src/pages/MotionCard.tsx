@@ -44,7 +44,7 @@ export default function MotionCard({ pkg }: MotionCardProps) {
         >
           <Box sx={{ flexGrow: 1 }}>
             <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-              <Typography variant="h6" sx={{ flexGrow: 1 }}>
+              <Typography variant="h6" display="flex" sx={{ flexGrow: 1 }}>
                 {pkg.title}
               </Typography>
               {pkg.discount && (
