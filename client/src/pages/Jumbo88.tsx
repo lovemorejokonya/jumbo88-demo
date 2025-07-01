@@ -93,9 +93,40 @@ export default function Jumbo88Page() {
           ))}
         </Box>
         <Box sx={{ mt: 4, textAlign: "center" }}>
-          <Typography variant="body2" color="white">
-            VISA &nbsp; • &nbsp; MasterCard &nbsp; • &nbsp; Apple Pay &nbsp; • &nbsp; Google Pay
-          </Typography>
+          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 3 }}>
+            {/* VISA */}
+            <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', height: 32 }}>
+              <svg width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48" height="32" rx="6" fill="#fff"/>
+                <text x="24" y="21" textAnchor="middle" fontFamily="Arial Black, Arial, sans-serif" fontWeight="bold" fontSize="16" fill="#1A1F71">VISA</text>
+              </svg>
+            </Box>
+            {/* Mastercard */}
+            <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', height: 32 }}>
+              <svg width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48" height="32" rx="6" fill="#fff"/>
+                <circle cx="19" cy="16" r="10" fill="#EB001B"/>
+                <circle cx="29" cy="16" r="10" fill="#F79E1B" fillOpacity="0.85"/>
+              </svg>
+            </Box>
+            {/* Apple Pay */}
+            <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', height: 32 }}>
+              <svg width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48" height="32" rx="6" fill="#000"/>
+                <text x="24" y="20" textAnchor="middle" fontFamily="Arial Black, Arial, sans-serif" fontWeight="bold" fontSize="14" fill="#fff"> Pay</text>
+              </svg>
+            </Box>
+            {/* Google Pay */}
+            <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', height: 32 }}>
+              <svg width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48" height="32" rx="6" fill="#fff"/>
+                <g>
+                  <text x="24" y="21" textAnchor="middle" fontFamily="Arial Black, Arial, sans-serif" fontWeight="bold" fontSize="14" fill="#4285F4">G</text>
+                  <text x="31" y="21" fontFamily="Arial Black, Arial, sans-serif" fontWeight="bold" fontSize="14" fill="#000">Pay</text>
+                </g>
+              </svg>
+            </Box>
+          </Box>
         </Box>
       </Box>
       <Box sx={{ mt: 8, textAlign: "center", color: '#a3e635', fontWeight: 'bold', fontSize: 18 }}>
